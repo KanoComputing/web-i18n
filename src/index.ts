@@ -2,6 +2,8 @@ export interface IMessageDB {
     [k : string] : string;
 };
 
+let debug = false;
+
 // Detected language
 let lang : string|null;
 // Language defined in the URL
@@ -54,6 +56,10 @@ function resolveLang() {
     resolvedLang = urlLang || lang || defaultLang;
 }
 
+export function setDebug(state : boolean) {
+    debug = state;
+}
+
 /**
  * Set the default language for this session. The default language will be used if the detected
  * language is not supported
@@ -75,7 +81,7 @@ export function getLang() {
  * Returns a localized string based on a provided id and a fallback value
  */
 export function localize(key : string, fallback? : string) {
-    return db[key] || fallback;
+    return debug ? `\${${key}}` : db[key] || fallback;
 }
 
 // Alias for localize

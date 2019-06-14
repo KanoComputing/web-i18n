@@ -14,7 +14,8 @@
     "build": "tsc",
     "build:release": "yarn build:tools && tsc --declaration",
     "build:tools": "tsc -p tsconfig.tools.json",
-    "watch:tools": "yarn build:tools --watch"
+    "watch:tools": "yarn build:tools --watch",
+    "prepublishOnly": "yarn build:release"
   },
   "devDependencies": {
     "@types/node": "^12.0.8",
