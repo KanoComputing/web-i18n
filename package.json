@@ -1,0 +1,30 @@
+{
+  "name": "web-i18n",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:KanoComputing/web-i18n.git",
+  "author": "Kano Computing <paul@kano.me>",
+  "license": "MIT",
+  "bin": {
+    "i18n-generator": "dist/tools/cli.js"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "watch": "tsc --watch",
+    "build": "tsc",
+    "build:release": "yarn build:tools && tsc --declaration",
+    "build:tools": "tsc -p tsconfig.tools.json",
+    "watch:tools": "yarn build:tools --watch"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.8",
+    "typescript": "^3.5.2"
+  },
+  "dependencies": {
+    "acorn": "^6.1.1",
+    "acorn-dynamic-import": "^4.0.0",
+    "acorn-walk": "^6.1.1",
+    "fast-glob": "^2.2.7",
+    "sywac": "^1.2.1"
+  }
+}
