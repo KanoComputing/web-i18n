@@ -49,7 +49,7 @@ function resolveLang() {
                 || (window.navigator as any).userLanguage;
     
     if (!lang || supportedLanguages.indexOf(lang) === -1) {
-        lang = 'en-US';
+        lang = defaultLang;
     }
     resolvedLang = urlLang || lang || defaultLang;
 }
