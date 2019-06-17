@@ -81,7 +81,7 @@ export function getLang() {
  * Returns a localized string based on a provided id and a fallback value
  */
 export function localize(key : string, fallback? : string) {
-    return debug ? `\${${key}}` : db[key] || fallback;
+    return debug ? `\${${key}}` : db[key] || fallback || '';
 }
 
 // Alias for localize
