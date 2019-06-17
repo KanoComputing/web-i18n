@@ -97,10 +97,13 @@ export function addMessages(msgs : IMessageDB) {
 /**
  * Fetch a JSON file and load the results in the db
  */
-export function loadMessages(src : string) {
+export function loadMessages(src : string) : Promise<IMessageDB> {
     return fetch(src)
         .then(r => r.json())
-        .then(msgs => addMessages(msgs));
+        .then((msgs) => {
+            addMessages(msgs);
+            return msgs;
+        });
 }
 
 /**
