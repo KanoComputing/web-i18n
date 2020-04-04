@@ -22,7 +22,7 @@
     "typescript": "^3.5.2"
   },
   "dependencies": {
-    "acorn": "^6.1.1",
+    "acorn": "^6.4.1",
     "acorn-dynamic-import": "^4.0.0",
     "acorn-walk": "^6.1.1",
     "fast-glob": "^2.2.7",
